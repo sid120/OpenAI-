@@ -1,1 +1,10 @@
 # OpenAI-
+This code is a chatbot application. It uses HTML, CSS, and JavaScript to create a chatbot that can respond to user input. The code starts by importing the bot and user images from the assets folder. It then creates a form element and a chat container element. 
+
+Next, it defines two functions: loader() and typeText(). The loader() function adds dots to the message div every 300 milliseconds until it reaches four dots. The typeText() function types out the text in the message div one character at a time with an interval of 20 milliseconds. 
+
+The generateUniqueId() function creates a unique ID for each message div using the current timestamp and random hexadecimal string. The chatStripe() function creates a wrapper div with two child elements: profile and message. The profile element contains an image of either the bot or user depending on whether it is an AI response or not. The message element contains the value passed in as an argument. 
+
+The handleSubmit() function is called when the form is submitted or when enter is pressed on the keyboard. It creates a new FormData object from the form element, then adds a chat stripe to the chat container with the user's input as its value. It then resets the form and adds another chat stripe for AI response with an empty string as its value and generates a unique ID for it using generateUniqueId(). 
+
+It then calls loader() on this new message div to add dots every 300 milliseconds until it reaches four dots, indicating that AI is thinking of its response. After that, it makes an asynchronous POST request to localhost:5000 with JSON data containing user's input as its body. If successful, it clears interval set by loader(), empties out message div, and types out AI's response one character at a time using typeText(). Otherwise, it alerts an error message if something went wrong during request process.
